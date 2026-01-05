@@ -1,0 +1,81 @@
+curl http://localhost:8000/health	//Health endpoint
+curl http://localhost:8000/model/features	//Test Model Features (sanity check)
+curl -X POST http://localhost:8000/predict/single \
+  -H "Content-Type: application/json" \
+  -d '{
+    "age": 55,
+    "sex": "male",
+    "cp": "typical angina",
+    "trestbps": 140,
+    "chol": 250,
+    "fbs": 0,
+    "restecg": "normal",
+    "thalach": 150,
+    "exang": 0,
+    "oldpeak": 1.2,
+    "slope": "upsloping",
+    "ca": 0,
+    "thal": "fixed defect"
+  }'
+	//Test SINGLE prediction (/predict/single)
+
+Invoke-RestMethod `
+  -Uri http://localhost:8000/predict/single `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body '{
+    "age": 55,
+    "sex": "male",
+    "cp": "typical angina",
+    "trestbps": 140,
+    "chol": 250,
+    "fbs": 0,
+    "restecg": "normal",
+    "thalach": 150,
+    "exang": 0,
+    "oldpeak": 1.2,
+    "slope": "upsloping",
+    "ca": 0,
+    "thal": "fixed defect"
+  }'
+	//for powershell Test SINGLE prediction (/predict/single)
+
+curl -X POST http://localhost:8000/predict \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "age": 60,
+      "sex": "male",
+      "cp": "asymptomatic",
+      "trestbps": 145,
+      "chol": 270,
+      "fbs": 1,
+      "restecg": "normal",
+      "thalach": 130,
+      "exang": 1,
+      "oldpeak": 2.3,
+      "slope": "flat",
+      "ca": 2,
+      "thal": "reversible defect"
+    },
+    {
+      "age": 45,
+      "sex": "female",
+      "cp": "non-anginal pain",
+      "trestbps": 120,
+      "chol": 210,
+      "fbs": 0,
+      "restecg": "normal",
+      "thalach": 165,
+      "exang": 0,
+      "oldpeak": 0.5,
+      "slope": "upsloping",
+      "ca": 0,
+      "thal": "normal"
+    }
+  ]'
+	//Test BATCH prediction (/predict)
+
+
+
+
