@@ -125,7 +125,7 @@ Navigate to localhost:8080/docs and check for swagger docs and for REST end poin
 A complete walkthrough of the project, including code explanation and execution, is available below:
 
 **Google Drive Demo Video:**  
-[ADD GOOGLE DRIVE LINK HERE]
+<p><a href="https://drive.google.com/file/d/1kQOyEbTIoTND07u6Vxwaiqc8kMf9SgQn/view?usp=sharing">Video Link</a></p>
 
 ---
 
